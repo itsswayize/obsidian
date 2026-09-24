@@ -1,0 +1,28 @@
+.tracking-widest { 
+  letter-spacing: 0.15em; 
+}
+
+.service-row {
+  transition: background-color var(--transition-fast), padding var(--transition-fast);
+  padding-inline: 1rem;
+  margin-inline: -1rem;
+  border-radius: 4px;
+  
+  &:hover {
+    background-color: var(--bg-surface);
+  }
+}
+
+.border-subtle { 
+  border-color: var(--border-subtle) !important; 
+}
+
+@media (max-width: 768px) {
+  .service-row {
+    padding-inline: 0;
+    margin-inline: 0;
+    &:hover { background-color: transparent; }
+  }
+  
+  .w-md-auto { width: 100% !important; }
+}

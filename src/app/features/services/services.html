@@ -1,0 +1,47 @@
+<div class="container py-5" style="margin-top: 100px; max-width: 1000px">
+  <div class="text-center mb-5 reveal-up">
+    <span class="text-accent text-uppercase small tracking-widest d-block mb-3">Service Menu</span>
+    <h1 class="display-4 font-display text-ivory mb-4">Mastery & Precision</h1>
+    <p class="text-muted-premium mx-auto" style="max-width: 600px">
+      Our signature grooming services are tailored to your individual style. Every appointment is an
+      experience in refinement.
+    </p>
+  </div>
+
+  <div class="service-menu mt-5">
+    @if (services$ | async; as services) {
+      @for (service of services; track service.id) {
+        <div
+          class="service-row py-4 border-bottom border-subtle reveal-up delay-1 d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3"
+        >
+          <div class="service-info flex-grow-1">
+            <div class="d-flex align-items-baseline justify-content-between mb-2">
+              <h2 class="h5 font-display text-ivory mb-0">{{ service.name }}</h2>
+              <span class="text-accent fs-5 font-display d-md-none">R{{ service.price }}</span>
+            </div>
+            <p class="text-muted-premium small mb-2 mb-md-0 pe-md-5">{{ service.description }}</p>
+            <span class="text-muted-premium small tracking-widest text-uppercase d-md-none"
+              >{{ service.durationMinutes }} MIN</span
+            >
+          </div>
+
+          <div class="service-meta d-flex align-items-center gap-4">
+            <div class="text-end d-none d-md-block">
+              <span class="text-accent fs-5 font-display d-block">R{{ service.price }}</span>
+              <span class="text-muted-premium small tracking-widest text-uppercase"
+                >{{ service.durationMinutes }} MIN</span
+              >
+            </div>
+            <a
+              routerLink="/booking"
+              [queryParams]="{ serviceId: service.id }"
+              class="btn btn-outline-custom text-nowrap w-100 w-md-auto mt-3 mt-md-0"
+            >
+              Reserve
+            </a>
+          </div>
+        </div>
+      }
+    }
+  </div>
+</div>

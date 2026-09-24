@@ -1,0 +1,292 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --bg-obsidian: #101112;
+  --bg-elevated: #17191a;
+  --bg-panel: rgba(31, 34, 35, 0.96);
+  --bg-glass: rgba(16, 17, 18, 0.86);
+  --surface-warm: #222526;
+  --espresso-soft: #303435;
+  --ivory: #f5f1e9;
+  --ivory-soft: #e5e1d8;
+  --muted: #b6b7b2;
+  --muted-strong: #d6d5cd;
+  --gold: #c7a46a;
+  --copper: #d9b77b;
+  --gold-soft: rgba(199, 164, 106, 0.18);
+  --gold-deep: #987744;
+  --border-subtle: rgba(245, 241, 233, 0.15);
+  --accent-gold: var(--gold);
+  --bg-primary: var(--bg-obsidian);
+  --bg-secondary: var(--surface-warm);
+  --text-primary: var(--ivory);
+  --text-secondary: var(--muted);
+  --border-color: var(--border-subtle);
+  --transition-speed: 0.2s;
+  --shadow-soft: 0 30px 70px rgba(0, 0, 0, 0.35);
+  --font-display: 'Cinzel', serif;
+  --font-body: 'Manrope', sans-serif;
+  --ease-cinematic: cubic-bezier(0.22, 1, 0.36, 1);
+  --transition-fast: 0.2s var(--ease-cinematic);
+  --transition-slow: 0.7s var(--ease-cinematic);
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--bg-obsidian);
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at 82% 0%, rgba(199, 164, 106, 0.08), transparent 25%),
+    linear-gradient(180deg, #101112 0%, #17191a 100%);
+  color: var(--ivory);
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.font-display {
+  font-family: var(--font-display);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  line-height: 1.08;
+  margin: 0 0 1rem;
+  color: var(--ivory);
+}
+
+p {
+  margin: 0;
+}
+
+.text-secondary {
+  color: var(--muted) !important;
+}
+
+.premium-card {
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  border: 1px solid var(--border-subtle);
+  border-radius: 2px;
+  background: linear-gradient(145deg, rgba(34, 37, 38, 0.96), rgba(23, 25, 26, 0.96));
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.18);
+}
+
+.text-accent {
+  color: var(--gold) !important;
+}
+
+.text-muted-premium {
+  color: var(--muted) !important;
+}
+
+.bg-charcoal {
+  background-color: var(--bg-elevated) !important;
+}
+
+.bg-obsidian {
+  background-color: var(--bg-obsidian) !important;
+}
+
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--copper);
+  font-weight: 700;
+}
+
+.section-label::before {
+  content: '';
+  width: 48px;
+  height: 1px;
+  background: rgba(197, 163, 106, 0.75);
+}
+
+.section-heading {
+  font-size: clamp(2.2rem, 4vw, 4rem);
+  max-width: 680px;
+}
+
+.soft-divider {
+  width: 68px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  margin: 0 auto;
+}
+
+::selection {
+  background: var(--gold);
+  color: var(--bg-obsidian);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-obsidian);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold);
+}
+
+*:focus-visible {
+  outline: 1px solid var(--gold) !important;
+  outline-offset: 4px !important;
+}
+
+.btn-primary-custom,
+.btn-outline-custom {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  padding: 0.95rem 1.7rem;
+  line-height: 1.15;
+  white-space: nowrap;
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  border-radius: 2px;
+  transition: transform var(--transition-fast), border-color var(--transition-fast),
+    background-color var(--transition-fast), color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.btn-primary-custom {
+  background: var(--copper);
+  color: var(--bg-obsidian);
+  border: 1px solid rgba(197, 163, 106, 0.7);
+  box-shadow: 0 18px 35px rgba(197, 163, 106, 0.25);
+}
+
+.btn-primary-custom:hover:not(:disabled) {
+  transform: translateY(-2px);
+  background: #ebca91;
+  box-shadow: 0 18px 38px rgba(197, 163, 106, 0.38);
+  color: var(--bg-obsidian);
+}
+
+.btn-outline-custom {
+  background: rgba(255, 255, 255, 0.02);
+  color: var(--ivory);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.btn-outline-custom:hover {
+  background: var(--ivory);
+  color: var(--bg-obsidian);
+  border-color: var(--ivory);
+  transform: translateY(-2px);
+}
+
+.btn-outline-secondary {
+  color: var(--muted-strong);
+  border-color: var(--border-subtle);
+  background: transparent;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: color var(--transition-fast), border-color var(--transition-fast),
+    background-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.btn-outline-secondary:hover,
+.btn-outline-secondary:focus-visible {
+  color: var(--ivory);
+  border-color: var(--gold);
+  background: rgba(199, 164, 106, 0.1);
+  transform: translateY(-1px);
+}
+
+.btn-primary-custom:active:not(:disabled),
+.btn-outline-custom:active,
+.btn-outline-secondary:active {
+  transform: translateY(0);
+}
+
+.reveal-up {
+  opacity: 1;
+  transform: translateY(12px);
+  animation: fadeUp 0.65s var(--ease-cinematic) forwards;
+  animation-fill-mode: both;
+}
+
+.delay-1 { animation-delay: 0.12s; }
+.delay-2 { animation-delay: 0.24s; }
+.delay-3 { animation-delay: 0.36s; }
+
+@keyframes fadeUp {
+  from {
+    opacity: 1;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+
+@media (max-width: 991px) {
+  .btn-primary-custom,
+  .btn-outline-custom {
+    width: 100%;
+  }
+}
+
+@media (max-width: 575px) {
+  .btn-primary-custom,
+  .btn-outline-custom {
+    min-height: 50px;
+    padding-inline: 1.2rem;
+    letter-spacing: 0.12em;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal-up,
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

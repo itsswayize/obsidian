@@ -1,0 +1,48 @@
+.tracking-widest { 
+  letter-spacing: 0.15em; 
+}
+
+.editorial-img-box {
+  height: 500px;
+  border: 1px solid var(--border-subtle);
+  
+  img {
+    height: 100%;
+  }
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    right: -15px;
+    width: 100px;
+    height: 100px;
+    border-right: 1px solid var(--accent-gold);
+    border-bottom: 1px solid var(--accent-gold);
+    z-index: -1;
+  }
+}
+
+.barber-avatar-box {
+  width: 90px;
+  height: 90px;
+  background-color: var(--bg-obsidian);
+  border: 1px solid var(--accent-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.barber-card {
+  transition: transform var(--transition-fast), border-color var(--transition-fast);
+  
+  &:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent-gold);
+  }
+}
+
+@media (max-width: 991px) {
+  .editorial-img-box { height: 350px; }
+  .editorial-img-box::after { display: none; }
+}

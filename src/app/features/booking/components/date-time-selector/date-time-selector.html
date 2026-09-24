@@ -1,0 +1,43 @@
+<div class="date-time-container">
+  <div class="mb-4">
+    <label for="bookingDate" class="form-label text-accent fw-bold small text-uppercase"
+      >Select Date</label
+    >
+    <input
+      type="date"
+      id="bookingDate"
+      #dateInput
+      class="form-control premium-input p-3"
+      [min]="minDate"
+      [ngModel]="selectedDate"
+      (click)="openDatePicker()"
+      (ngModelChange)="onDateChange($event)"
+    />
+  </div>
+
+  @if (selectedDate) {
+    <div class="mb-3 reveal-up">
+      <label class="form-label text-accent fw-bold small text-uppercase">Available Times</label>
+
+      @if (availableSlots.length > 0) {
+        <div class="row g-3">
+          @for (slot of availableSlots; track slot) {
+            <div class="col-4 col-sm-3 col-lg-2">
+              <button
+                class="btn w-100 time-slot-btn"
+                [ngClass]="{ active: selectedTime === slot }"
+                (click)="onTimeSelect(slot)"
+              >
+                {{ slot }}
+              </button>
+            </div>
+          }
+        </div>
+      } @else {
+        <div class="alert alert-dark border-secondary text-secondary mt-2">
+          No available appointments for this date. Please select another day.
+        </div>
+      }
+    </div>
+  }
+</div>

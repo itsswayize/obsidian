@@ -1,0 +1,32 @@
+@if (isVisible) {
+  <div
+    class="modal-backdrop-custom d-flex align-items-center justify-content-center"
+    (click)="onBackdropClick($event)"
+    role="dialog"
+    aria-modal="true"
+  >
+    <div class="premium-modal-content reveal-scale position-relative">
+      <button type="button" class="btn-close-custom" aria-label="Close" (click)="closeModal()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+
+      <div class="text-center p-4 p-md-5">
+        <span class="text-accent fw-bold small text-uppercase mb-2 d-block">Exclusive Offer</span>
+        <h2 class="display-6 fw-bold mb-3">Your First Visit</h2>
+        <p class="text-secondary mb-4">
+          Experience the pinnacle of grooming. Enjoy 10% off any signature service on your first
+          appointment with us.
+        </p>
+
+        <div class="d-flex flex-column gap-3">
+          <a routerLink="/booking" class="btn btn-primary-custom py-3" (click)="closeModal()"
+            >Claim Offer & Book</a
+          >
+          <button class="btn btn-link text-secondary text-decoration-none" (click)="closeModal()">
+            No thanks, I'll pay full price
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+}

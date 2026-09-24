@@ -1,0 +1,354 @@
+<section class="hero-section">
+  <div class="hero-media" aria-hidden="true"></div>
+  <div class="hero-backdrop" aria-hidden="true"></div>
+
+  <div class="container hero-inner">
+    <div class="row align-items-center g-5">
+      <div class="col-xl-7">
+        <div class="hero-copy reveal-up">
+          <p class="section-label hero-label">Established MMXVI • Johannesburg</p>
+          <h1 class="hero-title">
+            Precision<br />
+            <span>in every cut</span>
+          </h1>
+          <p class="hero-subtitle text-muted-premium">
+            Luxury grooming for the modern gentleman. Tailored cuts, restorative rituals, and a
+            studio experience crafted with intention.
+          </p>
+
+          <div class="hero-actions">
+            <a routerLink="/booking" class="btn btn-primary-custom">Book Your Appointment</a>
+            <a routerLink="/services" class="btn btn-outline-custom">Explore Services</a>
+          </div>
+
+          <ul class="hero-metrics" aria-label="Obsidian highlights">
+            <li><strong>4</strong><span>Signature services</span></li>
+            <li><strong>3</strong><span>Master barbers</span></li>
+            <li><strong>Mon–Sat</strong><span>Studio hours</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-xl-5">
+        <aside class="hero-panel reveal-up delay-2">
+          <p class="panel-kicker">At the chair</p>
+          <div class="hero-panel-body">
+            <div class="panel-row">
+              <span>Signature</span>
+              <strong>Skin Fade</strong>
+            </div>
+            <div class="panel-row">
+              <span>Duration</span>
+              <strong>45 min</strong>
+            </div>
+            <div class="panel-row">
+              <span>Style</span>
+              <strong>Tailored finish</strong>
+            </div>
+          </div>
+          <a routerLink="/booking" class="btn btn-primary-custom w-100">Reserve Your Spot</a>
+        </aside>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell statement-shell">
+  <div class="container text-center">
+    <div class="reveal-up">
+      <p class="section-label">The Obsidian Standard</p>
+      <h2 class="section-heading mx-auto">
+        Precision isn’t a service.<br />
+        It’s the standard.
+      </h2>
+      <div class="soft-divider"></div>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell service-shell">
+  <div class="container">
+    <div class="section-header reveal-up">
+      <div>
+        <p class="section-label">Signature Services</p>
+        <h2 class="section-heading">Refined by habit. Defined by detail.</h2>
+      </div>
+      <a routerLink="/services" class="inline-link">View service menu</a>
+    </div>
+
+    @if (services$ | async; as services) {
+      <div class="service-grid">
+        @for (service of services; track service.id; let i = $index) {
+          <a
+            class="service-card reveal-up"
+            [routerLink]="['/booking']"
+            [queryParams]="{ serviceId: service.id }"
+          >
+            <div class="service-card-top">
+              <span class="service-index">0{{ i + 1 }}</span>
+              <span class="service-duration">{{ service.durationMinutes }} min</span>
+            </div>
+            <h3>{{ service.name }}</h3>
+            <p>{{ service.description }}</p>
+            <div class="service-meta">
+              <span class="service-price">R{{ service.price }}</span>
+              <span class="service-link">Book now</span>
+            </div>
+          </a>
+        }
+      </div>
+    }
+  </div>
+</section>
+
+<section class="section-shell gallery-shell">
+  <div class="container">
+    <div class="section-header reveal-up">
+      <div>
+        <p class="section-label">Studio Journal</p>
+        <h2 class="section-heading">The atmosphere behind the chair.</h2>
+      </div>
+      <a routerLink="/about" class="inline-link">Our philosophy</a>
+    </div>
+
+    <div class="gallery-grid">
+      <div class="gallery-figure gallery-feature reveal-up">
+        <img src="/images/studio.jpg" alt="Luxury barber studio" />
+      </div>
+      <div class="gallery-figure reveal-up delay-1">
+        <img src="/images/detail.jpg" alt="Detail of grooming precision" />
+      </div>
+      <div class="gallery-figure note-card reveal-up delay-2">
+        <p class="note-kicker">The Ritual</p>
+        <p class="note-copy">
+          Restraint, precision, and confidence create the cleanest finish in the room.
+        </p>
+        <a routerLink="/booking" class="service-link">Reserve your chair</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell philosophy-shell">
+  <div class="container">
+    <div class="philosophy-layout">
+      <div class="philosophy-copy reveal-up">
+        <p class="section-label">Our Philosophy</p>
+        <h2 class="section-heading">Crafted for the man who values detail over noise.</h2>
+        <p class="lead-copy text-muted-premium">
+          Obsidian Grooming Co. was built as a place for intention: a calm, elevated studio where
+          modern grooming meets traditional barber discipline. Every service is shaped around your
+          routine, your features, and the kind of confidence you want to carry beyond the chair.
+        </p>
+      </div>
+
+      <div class="philosophy-visual reveal-up delay-1">
+        <img src="/images/studio.jpg" alt="Barber and client in premium grooming studio" />
+      </div>
+    </div>
+
+    <div class="value-grid">
+      <div class="value-card reveal-up">
+        <span>01</span>
+        <h3>Precision</h3>
+        <p>Every line, blend, and finish is shaped with careful intention.</p>
+      </div>
+      <div class="value-card reveal-up delay-1">
+        <span>02</span>
+        <h3>Craft</h3>
+        <p>Traditional technique meets modern styling in a balanced, contemporary result.</p>
+      </div>
+      <div class="value-card reveal-up delay-2">
+        <span>03</span>
+        <h3>Experience</h3>
+        <p>A grooming ritual designed to reset your presence and sharpen your confidence.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell team-shell">
+  <div class="container">
+    <div class="section-header reveal-up">
+      <div>
+        <p class="section-label">The Artisans</p>
+        <h2 class="section-heading">Master barbers, measured craft.</h2>
+      </div>
+    </div>
+
+    @if (barbers$ | async; as barbers) {
+      <div class="team-grid">
+        @for (barber of barbers; track barber.id; let i = $index) {
+          <article class="barber-card reveal-up" [class.barber-feature]="i === 0">
+            <div class="barber-portrait" [attr.data-tone]="barber.id">
+              <img
+                [src]="'/images/' + (i === 0 ? 'modise' : i === 1 ? 'thato' : 'elias') + '.jpg'"
+                [alt]="barber.name + ', barber at Obsidian Grooming Co.'"
+              />
+              <span>{{ barber.name.charAt(0) }}</span>
+            </div>
+            <div class="barber-copy">
+              <h3>{{ barber.name }}</h3>
+              <p class="barber-role">{{ barber.role }}</p>
+              <ul>
+                @for (spec of barber.specialties; track spec) {
+                  <li>{{ spec }}</li>
+                }
+              </ul>
+            </div>
+          </article>
+        }
+      </div>
+    }
+  </div>
+</section>
+
+<section class="section-shell testimonial-shell">
+  <div class="container">
+    <div class="section-header reveal-up">
+      <div>
+        <p class="section-label">Client Notes</p>
+        <h2 class="section-heading">Confidence, sharpened.</h2>
+      </div>
+    </div>
+
+    <div class="testimonial-grid">
+      <article class="testimonial-feature reveal-up">
+        <div>
+          <p class="quote-mark">“</p>
+          <blockquote>
+            The attention to detail was obvious from the first pass. Clean, sharp, and unmistakably
+            premium.
+          </blockquote>
+        </div>
+        <div class="testimonial-meta">
+          <strong>M. S.</strong>
+          <span>Signature Skin Fade</span>
+        </div>
+      </article>
+
+      <article class="testimonial-card reveal-up delay-1">
+        <p class="testimonial-eyebrow">The finish</p>
+        <p>
+          “The finish was crisp, comfortable, and comfortably above standard. That kind of precision
+          is rare.”
+        </p>
+        <div class="testimonial-meta">
+          <strong>J. M.</strong>
+          <span>Executive Cut & Beard</span>
+        </div>
+      </article>
+
+      <article class="testimonial-card reveal-up delay-2">
+        <p class="testimonial-eyebrow">The feeling</p>
+        <p>
+          “Everything feels considered here — from the atmosphere to the final shape. It feels like
+          a studio, not a rush job.”
+        </p>
+        <div class="testimonial-meta">
+          <strong>K. L.</strong>
+          <span>Classic Taper</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell stats-shell">
+  <div class="container">
+    <div class="stats-grid reveal-up">
+      <div class="stat-item">
+        <strong>04</strong>
+        <span>Signature services</span>
+      </div>
+      <div class="stat-item">
+        <strong>03</strong>
+        <span>Master barbers</span>
+      </div>
+      <div class="stat-item">
+        <strong>MMXVI</strong>
+        <span>Established in Johannesburg</span>
+      </div>
+      <div class="stat-item">
+        <strong>Mon-Sat</strong>
+        <span>Studio access</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell booking-shell">
+  <div class="container">
+    <div class="booking-banner reveal-up">
+      <div>
+        <p class="section-label">Ready for your next cut?</p>
+        <h2 class="section-heading">Reserve your chair at Obsidian.</h2>
+      </div>
+      <a routerLink="/booking" class="btn btn-primary-custom">Book Your Appointment</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell faq-shell">
+  <div class="container">
+    <div class="section-header reveal-up">
+      <div>
+        <p class="section-label">FAQ</p>
+        <h2 class="section-heading">Everything you need to know.</h2>
+      </div>
+    </div>
+
+    <div class="faq-list reveal-up delay-1">
+      <details open>
+        <summary>What services do you offer?</summary>
+        <p>
+          Our core menu includes signature skin fades, executive cut and beard services, classic
+          tapers, and hot towel shaves.
+        </p>
+      </details>
+      <details>
+        <summary>How long does an appointment take?</summary>
+        <p>Most sessions run between 30 and 60 minutes depending on the selected service.</p>
+      </details>
+      <details>
+        <summary>Do I need to book in advance?</summary>
+        <p>Booking ahead is recommended to secure your preferred chair and barber.</p>
+      </details>
+      <details>
+        <summary>Where are you located?</summary>
+        <p>We are based at 124 Heritage Avenue, Johannesburg, 2000.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell contact-shell">
+  <div class="container">
+    <div class="contact-panel reveal-up">
+      <div>
+        <p class="section-label">Visit the studio</p>
+        <h2 class="section-heading">Find your rhythm in the chair.</h2>
+      </div>
+
+      <div class="contact-details">
+        <div>
+          <span>Location</span>
+          <p>124 Heritage Avenue<br />Johannesburg, 2000</p>
+        </div>
+        <div>
+          <span>Contact</span>
+          <p>
+            <a href="tel:+27821234567">+27 82 123 4567</a><br />
+            <a href="mailto:info@obsidiangrooming.co.za">info&#64;obsidiangrooming.co.za</a>
+          </p>
+        </div>
+        <div>
+          <span>Hours</span>
+          <p>Mon–Fri: 09:00–18:00<br />Sat: 08:00–15:00</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-promo-modal></app-promo-modal>

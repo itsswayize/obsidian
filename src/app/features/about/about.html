@@ -1,0 +1,65 @@
+<div class="container py-5" style="margin-top: 100px">
+  <!-- Editorial Brand Manifesto -->
+  <div class="row align-items-center mb-5 pb-5 border-bottom border-subtle g-5">
+    <div class="col-lg-6 reveal-up">
+      <span class="text-accent text-uppercase small tracking-widest d-block mb-3"
+        >Our Philosophy</span
+      >
+      <h1 class="display-4 font-display text-ivory mb-4">Crafting Identity Through Precision</h1>
+      <p class="lead text-muted-premium mb-4">
+        Grooming is an intentional ritual. It demands absolute mastery, patience, and a refusal to
+        accept the ordinary.
+      </p>
+      <p class="text-muted-premium small mb-4">
+        Founded in Johannesburg, Obsidian Grooming Co. was built as a sanctuary for the modern
+        gentleman. We merge traditional straight-razor artistry with razor-sharp modern silhouettes.
+        Every line is deliberate; every chair is a space of transformation.
+      </p>
+    </div>
+    <div class="col-lg-6 reveal-up delay-1">
+      <div class="editorial-img-box position-relative">
+        <img
+          src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?q=80&w=2074&auto=format&fit=crop"
+          alt="Obsidian Master Barber at Work"
+          class="w-100 object-fit-cover shadow-lg"
+        />
+      </div>
+    </div>
+  </div>
+
+  <!-- Master Barbers Grid -->
+  <div class="text-center mb-5 reveal-up pt-4">
+    <span class="text-accent text-uppercase small tracking-widest d-block mb-2">The Artisans</span>
+    <h2 class="display-6 font-display text-ivory">Master Barbers</h2>
+  </div>
+
+  <div class="row g-4 justify-content-center">
+    @if (barbers$ | async; as barbers) {
+      @for (barber of barbers; track barber.id) {
+        <div class="col-md-6 col-lg-4 reveal-up delay-2">
+          <div
+            class="barber-card h-100 d-flex flex-column text-center p-4 bg-charcoal border border-subtle position-relative"
+          >
+            <div class="barber-avatar-box mx-auto mb-4">
+              <span class="font-display display-6 text-accent">{{ barber.name.charAt(0) }}</span>
+            </div>
+
+            <h3 class="h5 font-display text-ivory mb-1">{{ barber.name }}</h3>
+            <p class="text-accent small tracking-widest text-uppercase mb-3">{{ barber.role }}</p>
+
+            <div
+              class="d-flex flex-wrap justify-content-center gap-2 mt-auto pt-3 border-top border-subtle"
+            >
+              @for (spec of barber.specialties; track spec) {
+                <span
+                  class="badge bg-obsidian text-muted-premium border border-subtle px-3 py-2 fw-normal small"
+                  >{{ spec }}</span
+                >
+              }
+            </div>
+          </div>
+        </div>
+      }
+    }
+  </div>
+</div>

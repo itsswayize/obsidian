@@ -1,0 +1,27 @@
+.cursor-pointer { cursor: pointer; }
+.text-accent { color: var(--accent-gold); }
+
+.row.g-4 {
+  --bs-gutter-x: 1rem;
+  --bs-gutter-y: 1rem;
+}
+
+.premium-card {
+  min-height: 220px;
+  padding: 1.35rem;
+}
+
+.border-accent {
+  border-color: var(--accent-gold) !important;
+  box-shadow: 0 0 15px rgba(197, 160, 89, 0.15);
+}
+
+.premium-card {
+  transition: transform var(--transition-fast), border-color var(--transition-fast),
+    box-shadow var(--transition-fast);
+  &:hover {
+    border-color: var(--accent-gold);
+    transform: translateY(-2px);
+    box-shadow: 0 16px 30px rgba(0, 0, 0, 0.18);
+  }
+}

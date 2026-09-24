@@ -1,0 +1,22 @@
+.text-accent { color: var(--accent-gold); }
+
+.premium-input {
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+
+  &::placeholder {
+    color: var(--muted-strong);
+    opacity: 0.82;
+  }
+  
+  &:focus {
+    border-color: var(--accent-gold);
+    box-shadow: 0 0 0 0.25rem rgba(197, 160, 89, 0.25);
+    outline: none;
+  }
+}
+
+.text-danger {
+  color: #e74c3c !important;
+}

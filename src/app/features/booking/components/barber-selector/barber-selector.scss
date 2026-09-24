@@ -1,0 +1,37 @@
+.cursor-pointer { cursor: pointer; }
+.text-accent { color: var(--accent-gold); }
+
+.border-accent {
+  border-color: var(--accent-gold) !important;
+  box-shadow: 0 0 15px rgba(197, 160, 89, 0.15);
+}
+
+.barber-avatar {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  background-color: var(--bg-primary);
+  border: 2px solid var(--border-color);
+  border-radius: 2px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-primary);
+  transition: all 0.2s ease;
+}
+
+.barber-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.premium-card {
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    border-color: var(--accent-gold);
+    transform: translateY(-2px);
+    .barber-avatar { border-color: var(--accent-gold); }
+  }
+}

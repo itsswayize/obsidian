@@ -1,0 +1,71 @@
+<div class="container py-5" style="margin-top: 80px">
+  <div class="text-center mb-5 reveal-up">
+    <h1 class="display-4 fw-bold">Visit Obsidian</h1>
+    <p class="text-secondary">Find us, contact us, or book your next appointment.</p>
+  </div>
+
+  <div class="row g-5">
+    <!-- Contact Details -->
+    <div class="col-lg-6 reveal-up delay-1">
+      <div class="premium-card h-100">
+        <h2 class="h3 mb-4">Get In Touch</h2>
+
+        <div class="mb-4">
+          <h3 class="h6 text-accent mb-2">LOCATION</h3>
+          <p class="text-secondary mb-0">
+            124 Heritage Avenue<br />Johannesburg, 2000<br />South Africa
+          </p>
+        </div>
+
+        <div class="mb-4">
+          <h3 class="h6 text-accent mb-2">CONTACT</h3>
+          <p class="mb-1">
+            <a href="tel:+27821234567" class="text-secondary text-decoration-none hover-white"
+              >+27 82 123 4567</a
+            >
+          </p>
+          <p class="mb-0">
+            <a
+              href="mailto:info@obsidiangrooming.co.za"
+              class="text-secondary text-decoration-none hover-white"
+              >info&#64;obsidiangrooming.co.za</a
+            >
+          </p>
+        </div>
+
+        <div class="mb-4">
+          <h3 class="h6 text-accent mb-2">SOCIAL</h3>
+          <div class="d-flex gap-3">
+            <a href="#" class="text-secondary text-decoration-none hover-white">Instagram</a>
+            <a href="#" class="text-secondary text-decoration-none hover-white">Facebook</a>
+            <a href="#" class="text-secondary text-decoration-none hover-white">X</a>
+          </div>
+        </div>
+
+        <div class="mt-5">
+          <a routerLink="/booking" class="btn btn-primary-custom w-100">Book Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Opening Hours -->
+    <div class="col-lg-6 reveal-up delay-2">
+      <div class="premium-card h-100">
+        <h2 class="h3 mb-4">Opening Hours</h2>
+
+        <ul class="list-unstyled mb-0">
+          @if (hoursDisplay$ | async; as hours) {
+            @for (day of hours; track day.name) {
+              <li class="d-flex justify-content-between mb-3 border-bottom border-secondary pb-2">
+                <span class="text-secondary">{{ day.name }}</span>
+                <span class="fw-bold" [ngClass]="{ 'text-accent': day.hours !== 'Closed' }">{{
+                  day.hours
+                }}</span>
+              </li>
+            }
+          }
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

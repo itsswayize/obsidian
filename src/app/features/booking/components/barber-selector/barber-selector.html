@@ -1,0 +1,29 @@
+<div class="row g-4">
+  @if (barbers$ | async; as barbers) {
+    @for (barber of barbers; track barber.id) {
+      <div class="col-md-6 col-lg-4">
+        <div
+          class="premium-card text-center h-100 cursor-pointer"
+          [ngClass]="{ 'border-accent': selectedBarberId === barber.id }"
+          (click)="onSelect(barber)"
+        >
+          <div
+            class="barber-avatar mx-auto mb-3"
+            [ngClass]="{ 'border-accent': selectedBarberId === barber.id }"
+          >
+            <img [src]="barber.imageUrl" [alt]="barber.name + ', ' + barber.role" />
+          </div>
+
+          <h4 class="h6 mb-1">{{ barber.name }}</h4>
+          <p class="text-accent small mb-3 text-uppercase">{{ barber.role }}</p>
+
+          <div class="d-flex flex-wrap justify-content-center gap-2">
+            @for (spec of barber.specialties; track spec) {
+              <span class="badge bg-dark border border-secondary fw-normal">{{ spec }}</span>
+            }
+          </div>
+        </div>
+      </div>
+    }
+  }
+</div>

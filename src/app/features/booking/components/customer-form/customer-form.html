@@ -1,0 +1,99 @@
+<form [formGroup]="customerForm" (ngSubmit)="onSubmit()" class="premium-card">
+  <div class="row g-4">
+    <div class="col-md-6">
+      <label for="firstName" class="form-label text-accent fw-bold small text-uppercase"
+        >First Name</label
+      >
+      <input
+        type="text"
+        id="firstName"
+        class="form-control premium-input p-3"
+        formControlName="firstName"
+        placeholder="John"
+      />
+      @if (f['firstName'].touched && f['firstName'].errors) {
+        <div class="text-danger small mt-2">
+          @if (f['firstName'].errors['required']) {
+            First name is required.
+          }
+          @if (f['firstName'].errors['pattern']) {
+            Contains invalid characters.
+          }
+        </div>
+      }
+    </div>
+
+    <div class="col-md-6">
+      <label for="lastName" class="form-label text-accent fw-bold small text-uppercase"
+        >Last Name</label
+      >
+      <input
+        type="text"
+        id="lastName"
+        class="form-control premium-input p-3"
+        formControlName="lastName"
+        placeholder="Doe"
+      />
+      @if (f['lastName'].touched && f['lastName'].errors) {
+        <div class="text-danger small mt-2">
+          @if (f['lastName'].errors['required']) {
+            Last name is required.
+          }
+          @if (f['lastName'].errors['pattern']) {
+            Contains invalid characters.
+          }
+        </div>
+      }
+    </div>
+
+    <div class="col-md-6">
+      <label for="email" class="form-label text-accent fw-bold small text-uppercase"
+        >Email Address</label
+      >
+      <input
+        type="email"
+        id="email"
+        class="form-control premium-input p-3"
+        formControlName="email"
+        placeholder="john@example.com"
+      />
+      @if (f['email'].touched && f['email'].errors) {
+        <div class="text-danger small mt-2">
+          @if (f['email'].errors['required']) {
+            Email is required.
+          }
+          @if (f['email'].errors['email']) {
+            Please enter a valid email address.
+          }
+        </div>
+      }
+    </div>
+
+    <div class="col-md-6">
+      <label for="phone" class="form-label text-accent fw-bold small text-uppercase"
+        >Phone Number</label
+      >
+      <input
+        type="tel"
+        id="phone"
+        class="form-control premium-input p-3"
+        formControlName="phone"
+        placeholder="082 123 4567"
+      />
+      @if (f['phone'].touched && f['phone'].errors) {
+        <div class="text-danger small mt-2">
+          @if (f['phone'].errors['required']) {
+            Phone number is required.
+          }
+          @if (f['phone'].errors['pattern']) {
+            Please enter a valid SA phone number (e.g. 0821234567).
+          }
+        </div>
+      }
+    </div>
+
+    <div class="col-12 mt-5 text-end">
+      <button type="submit" class="btn btn-primary-custom px-5 py-3">Review Booking</button>
+    </div>
+  </div>
+</form>
