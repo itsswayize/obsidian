@@ -16,7 +16,7 @@
   </div>
 
   @if (selectedDate) {
-    <div class="mb-3 reveal-up">
+    <div class="mb-3">
       <label class="form-label text-accent fw-bold small text-uppercase">Available Times</label>
 
       @if (availableSlots.length > 0) {
@@ -38,6 +38,18 @@
           No available appointments for this date. Please select another day.
         </div>
       }
+
+      <div class="date-time-actions mt-4 pt-3 border-top border-secondary">
+        <p class="text-secondary small mb-3">Select a time, then confirm your appointment slot.</p>
+        <button
+          type="button"
+          class="btn btn-primary-custom"
+          [disabled]="!selectedTime"
+          (click)="confirmDateTime()"
+        >
+          Confirm Date &amp; Time
+        </button>
+      </div>
     </div>
   }
 </div>

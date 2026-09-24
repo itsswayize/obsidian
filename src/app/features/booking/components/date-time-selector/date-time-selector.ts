@@ -50,6 +50,11 @@ export class DateTimeSelectorComponent implements OnInit {
 
   onTimeSelect(time: string) {
     this.selectedTime = time;
+  }
+
+  confirmDateTime() {
+    if (!this.selectedDate || !this.selectedTime) return;
+
     this.dateTimeSelected.emit({ date: this.selectedDate, time: this.selectedTime });
   }
 
