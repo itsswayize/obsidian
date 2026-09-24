@@ -87,17 +87,6 @@
   display: none;
 }
 
-.reveal-up {
-  opacity: 1;
-  transform: translateY(8px);
-  animation: fadeUp 0.45s var(--ease-cinematic) forwards;
-}
-
-@keyframes fadeUp {
-  from { opacity: 1; transform: translateY(8px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
 @media (min-width: 576px) {
   .border-start-sm { border-left: 1px solid var(--border-color); }
 }
@@ -113,6 +102,3 @@
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .reveal-up { animation: none; }
-}

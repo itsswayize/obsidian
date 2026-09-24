@@ -28,9 +28,17 @@
   height: 90px;
   background-color: var(--bg-obsidian);
   border: 1px solid var(--accent-gold);
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
 }
 
 .barber-card {

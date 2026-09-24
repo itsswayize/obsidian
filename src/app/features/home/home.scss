@@ -36,6 +36,40 @@
   padding-block: 5rem;
 }
 
+.hero-scroll-cue {
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.65rem;
+  color: var(--muted-strong);
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  transform: translateX(-50%);
+}
+
+.hero-scroll-cue:hover {
+  color: var(--gold);
+}
+
+.hero-scroll-line {
+  width: 1px;
+  height: 42px;
+  background: var(--gold);
+  transform-origin: top;
+  animation: scrollCue 1.8s var(--ease-cinematic) infinite;
+}
+
+@keyframes scrollCue {
+  0%, 100% { opacity: 0.35; transform: scaleY(0.55); }
+  50% { opacity: 1; transform: scaleY(1); }
+}
+
 .hero-copy {
   max-width: 720px;
 }
@@ -771,6 +805,10 @@
 
   .hero-actions {
     flex-direction: column;
+  }
+
+  .hero-scroll-cue {
+    bottom: 1rem;
   }
 
   .service-grid,

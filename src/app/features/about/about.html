@@ -41,7 +41,11 @@
             class="barber-card h-100 d-flex flex-column text-center p-4 bg-charcoal border border-subtle position-relative"
           >
             <div class="barber-avatar-box mx-auto mb-4">
-              <span class="font-display display-6 text-accent">{{ barber.name.charAt(0) }}</span>
+              @if (barber.imageUrl) {
+                <img [src]="barber.imageUrl" [alt]="barber.name + ', ' + barber.role" />
+              } @else {
+                <span class="font-display display-6 text-accent">{{ barber.name.charAt(0) }}</span>
+              }
             </div>
 
             <h3 class="h5 font-display text-ivory mb-1">{{ barber.name }}</h3>

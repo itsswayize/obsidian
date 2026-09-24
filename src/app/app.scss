@@ -1,0 +1,33 @@
+:host {
+	display: block;
+}
+
+.back-to-top {
+	position: fixed;
+	right: clamp(1rem, 3vw, 2rem);
+	bottom: clamp(1rem, 3vw, 2rem);
+	z-index: 1030;
+	width: 3.25rem;
+	height: 3.25rem;
+	display: grid;
+	place-items: center;
+	border: 1px solid var(--gold);
+	border-radius: 50%;
+	background: rgba(16, 17, 18, 0.9);
+	color: var(--gold);
+	font-size: 1.35rem;
+	box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+	transition: transform var(--transition-fast), background-color var(--transition-fast), color var(--transition-fast);
+	animation: backToTopIn 0.35s var(--ease-cinematic) both;
+}
+
+.back-to-top:hover {
+	transform: translateY(-3px);
+	background: var(--gold);
+	color: var(--bg-obsidian);
+}
+
+@keyframes backToTopIn {
+	from { opacity: 0; transform: translateY(12px); }
+	to { opacity: 1; transform: translateY(0); }
+}
