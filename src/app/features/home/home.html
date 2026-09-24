@@ -52,10 +52,17 @@
     </div>
   </div>
 
-  <a class="hero-scroll-cue" href="#standard-section" aria-label="Scroll to explore more">
-    <span>Scroll to explore</span>
-    <span class="hero-scroll-line" aria-hidden="true"></span>
-  </a>
+  @if (showScrollCue) {
+    <a
+      class="hero-scroll-cue"
+      href="#standard-section"
+      aria-label="Scroll to explore more"
+      (click)="scrollToStandard($event)"
+    >
+      <span class="hero-scroll-label">Scroll</span>
+      <span class="hero-scroll-line" aria-hidden="true"></span>
+    </a>
+  }
 </section>
 
 <section id="standard-section" class="section-shell statement-shell">
